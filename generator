@@ -1,0 +1,22 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <time.h>
+
+using namespace std;
+
+int main() {
+	int x,y=0;
+	fstream myfile;
+	cout<<"podaj ile chcesz wygenerowac liczb"<<endl;
+	cin>>ilosc;
+	myfile.open ("numbers.txt", ios::out);
+		srand(time(NULL));
+		for(int i=0;i<ilosc;i++){
+			x=rand()%100+1;
+			myfile<<x<<endl;
+			y=x;
+		}
+		myfile.close();
+    return 0;
+}
